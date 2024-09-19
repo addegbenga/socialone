@@ -14,7 +14,7 @@ export default function ImageGrid({
   handleDelete,
   handleEdit,
 }: {
-  handleEdit: (item: any) => void;
+  handleEdit: (item: any, index: number) => void;
   handleDelete: () => void;
   images: { img: string; rawFile: any }[];
 }) {
@@ -41,7 +41,7 @@ export default function ImageGrid({
             />
             <div className="absolute top-10 left-0 right-0 flex justify-between ">
               <Button
-                onClick={() => handleEdit(item)}
+                onClick={() => handleEdit(item, index)}
                 // onClick={() => handleImageEdit(index)}
                 className="rounded-full absolute left-4 px-4 ml-2 h-7 "
               >

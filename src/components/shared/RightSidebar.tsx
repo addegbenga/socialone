@@ -55,38 +55,6 @@ const connectedAccounts = [
 export default function RightSidebar() {
   return (
     <div className="w-[22rem] sticky top-0 self-start ml-auto flex-shrink-0 border-gray-200 p-4 flex flex-col overflow-y-auto">
-      <Card className="mb-6 rounded-none shadow-none">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center">
-            <Globe className="h-5 w-5 mr-2" />
-            Connected Accounts
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {connectedAccounts.map((account, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <div className="flex items-center">
-                  {/* {account.icon} */}
-                  {/* <account.icon className={`h-5 w-5 mr-2 ${account.color}`} /> */}
-                  <div>
-                    <div className="text-sm font-medium">
-                      {account.platform}
-                    </div>
-                    <div className="text-xs tracking-tighter text-muted-foreground">
-                      {account.username}
-                    </div>
-                  </div>
-                </div>
-                <Button variant="ghost" size="sm">
-                  Manage
-                </Button>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
       <Card className="mb-6">
         <CardHeader>
           <CardTitle className="text-lg flex items-center">

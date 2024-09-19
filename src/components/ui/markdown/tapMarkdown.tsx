@@ -24,6 +24,7 @@ import {
   ThreadComponentProps,
 } from "@/services/thread.types";
 import { supportedSocialsIcon } from "@/services/data";
+import { useRouter } from "@tanstack/react-router";
 
 const extensions = [
   Placeholder.configure({
@@ -234,6 +235,7 @@ export default function ThreadedMarkdown({
               deleteImage={(imageIndex) => deleteImage(index, imageIndex)}
               setSelectedImage={setSelectedImage}
               setIsImageModalOpen={setIsImageModalOpen}
+              contentType={contentType}
             />
           ))}
         </div>
@@ -257,9 +259,11 @@ function ThreadComponent({
   handleImageUpload,
   deleteImage,
   setSelectedImage,
+  contentType,
   setIsImageModalOpen,
   updateThreadOnMaxChar,
 }: ThreadComponentProps) {
+  const router = useRouter();
   const editor = useEditor({
     // @ts-ignore
     extensions,
@@ -269,6 +273,7 @@ function ThreadComponent({
       updateThreadOnMaxChar(newContent);
     },
     editable: true,
+    autofocus: true,
   });
 
   return (
@@ -300,9 +305,12 @@ function ThreadComponent({
         {thread.images.length > 0 && (
           <ImageGrid
             handleDelete={() => console.log("deleted")}
-            handleEdit={(item) => {
+            handleEdit={(item, index) => {
               setSelectedImage(item);
-              setIsImageModalOpen(true);
+              router.navigate({
+                to: `/post/t=${thread.id}&p=${index}&content=${contentType}/edit`,
+              });
+              // setIsImageModalOpen(true);
             }}
             images={thread.images}
           />

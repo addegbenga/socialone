@@ -80,3 +80,7 @@
   border-top: 2px solid rgba(13, 13, 13, 0.1);
   margin: 2rem 0;
 }
+
+.dems {
+  background: url("/bg.jpg") !important;
+}

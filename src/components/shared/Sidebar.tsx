@@ -39,7 +39,7 @@ export default function Sidebar({ className }: SidebarProps) {
     {
       name: "Create",
       icon: <PlusCircle className="h-4 w-4" />,
-      url: "/create",
+      url: "/post",
       id: 2,
     },
     {
