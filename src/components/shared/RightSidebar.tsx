@@ -55,7 +55,7 @@ const connectedAccounts = [
 export default function RightSidebar() {
   return (
     <div className="w-[22rem] sticky top-0 self-start ml-auto flex-shrink-0 border-gray-200 p-4 flex flex-col overflow-y-auto">
-      <Card className="mb-6">
+      <Card className="mb-6 shadow-none">
         <CardHeader>
           <CardTitle className="text-lg flex items-center">
             <Settings className="h-5 w-5 mr-2" />
@@ -73,15 +73,14 @@ export default function RightSidebar() {
               Help & Support
             </Button>
           </div>
+          <div className="pt-5">
+            <Button variant="outline" className="w-full" size="lg">
+              <PlusCircle className="h-5 w-5 mr-2" />
+              Create New Post
+            </Button>
+          </div>
         </CardContent>
       </Card>
-
-      <div className="">
-        <Button className="w-full" size="lg">
-          <PlusCircle className="h-5 w-5 mr-2" />
-          Create New Post
-        </Button>
-      </div>
     </div>
   );
 }

@@ -304,7 +304,7 @@ function ThreadComponent({
         <EditorContent editor={editor} />
         {thread.images.length > 0 && (
           <ImageGrid
-            handleDelete={() => console.log("deleted")}
+            handleDelete={deleteImage}
             handleEdit={(item, index) => {
               setSelectedImage(item);
               router.navigate({

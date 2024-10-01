@@ -15,7 +15,7 @@ export default function ImageGrid({
   handleEdit,
 }: {
   handleEdit: (item: any, index: number) => void;
-  handleDelete: () => void;
+  handleDelete: (idx: number) => void;
   images: { img: string; rawFile: any }[];
 }) {
   return (
@@ -48,7 +48,7 @@ export default function ImageGrid({
                 Edit
               </Button>
               <Button
-                // onClick={() => handleImageDelete(index)}
+                onClick={() => handleDelete(index)}
                 className="rounded-full absolute right-2 w-7 h-7"
                 variant={"outline"}
                 size={"icon"}
